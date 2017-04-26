@@ -1,10 +1,18 @@
 package com.sk.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Represents a task. A task has a description and is either completed or not completed.
  */
+@Entity
 public class Task {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String description;
@@ -15,8 +23,7 @@ public class Task {
 
     }
 
-    public Task(int id, String description, boolean isCompleted){
-        this.id = id;
+    public Task(String description, boolean isCompleted){
         this.description = description;
         this.isCompleted = isCompleted;
     }

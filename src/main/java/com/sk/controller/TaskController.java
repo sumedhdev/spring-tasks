@@ -27,7 +27,7 @@ public class TaskController {
 
     @RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     public void addTask(@RequestBody Task newTask){
-        this.service.addTask(newTask.getId(), newTask.getDescription(), newTask.getIsCompleted());
+        this.service.addTask(newTask.getDescription(), newTask.getIsCompleted());
     }
 
     @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -12,7 +12,7 @@ public interface TaskDao {
 
     Task getTaskById(int id);
 
-    void addTask(int id, String description, boolean isCompleted);
+    void addTask(String description, boolean isCompleted);
 
     void updateTask(Task task);
 

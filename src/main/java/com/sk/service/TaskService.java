@@ -12,7 +12,7 @@ import java.util.Collection;
 public class TaskService {
 
     @Autowired
-    @Qualifier("OtherFakeData")
+    @Qualifier("MySQLData")
     private TaskDao dao;
 
     public Collection<Task> getAllTasks(){
@@ -23,8 +23,8 @@ public class TaskService {
         return this.dao.getTaskById(id);
     }
 
-    public void addTask(int id, String description, boolean isCompleted){
-        this.dao.addTask(id, description, isCompleted);
+    public void addTask(String description, boolean isCompleted){
+        this.dao.addTask(description, isCompleted);
     }
 
     public void updateTask(Task task){
